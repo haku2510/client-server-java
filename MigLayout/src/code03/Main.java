@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 import net.miginfocom.swing.MigLayout;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
