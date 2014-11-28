@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+C:\Users\Stephen\Documents\College work\MigLayout\.metadata\.plugins\org.eclipse.jdt.core
+4260985025.index
+1654582380.index
+2824611578.index

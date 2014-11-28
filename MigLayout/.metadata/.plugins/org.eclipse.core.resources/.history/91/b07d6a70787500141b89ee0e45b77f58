@@ -1,0 +1,43 @@
+package code01;
+
+import java.awt.BorderLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import net.miginfocom.swing.MigLayout;
+
+public class Main {
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("MigLayout");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocation(300,400);		
+		JPanel panel = new JPanel();
+		panel.setBorder(BorderFactory.createTitledBorder("GUI"));
+		frame.add(panel);
+		
+		panel.setLayout(new MigLayout("debug", "[]20[]", "[] [] []")); //number of columns and rows
+		
+		JLabel firstnameLabel = new JLabel("First Name: ");
+		JLabel surnameLabel = new JLabel("Surname: ");
+		JTextField firstname = new JTextField(20);
+		JTextField surname = new JTextField(10);
+		
+		//
+		panel.add(firstnameLabel, "left, sg 1, split");	//Align left, ????, split cell
+		panel.add(firstname, "pushx, growx, wrap");		//????, can grow, finish row
+		
+		panel.add(surnameLabel, "left, sg 1, split");
+		panel.add(surname, "pushx, growx, wrap");
+		
+		
+		frame.add(panel, BorderLayout.CENTER);
+		frame.pack();
+		frame.setVisible(true);
+	}
+
+}
