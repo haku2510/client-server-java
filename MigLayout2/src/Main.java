@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -40,12 +41,12 @@ public class Main {
 		JPanel panel4 = new JPanel();
 
 		//Keypad Frame
-//		JFrame keypad = new JFrame("JB Stock");
-//		keypad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		keypad.setLocation(150,200);
-//		
-//		//Keypad Panel
-//		JPanel panel5 = new JPanel();
+		JFrame keypad = new JFrame("JB Stock");
+		keypad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		keypad.setLocation(150,200);
+		
+		//Keypad Panel
+		JPanel panel5 = new JPanel();
 		
 		/**********************************************/
 		
@@ -61,13 +62,15 @@ public class Main {
 		JLabel blankLabel3 = new JLabel("hi");
 		JLabel blankLabel4 = new JLabel("hi");
 		JLabel blankLabel5 = new JLabel("hi");
-		
+		JLabel blankLabel6 = new JLabel("Current Time");
+
 		blankLabel.setVisible(false);
 		blankLabel2.setVisible(false);
 		blankLabel3.setVisible(false);
 		blankLabel4.setVisible(false);
 		blankLabel5.setVisible(false);
-		
+//		blankLabel6.setVisible(false);
+
 		panel1.add(new JLabel("Joe Bloggs Hardware"),"cell 0 0,alignx center");
 		panel1.add(new JLabel("Shop Street,"),"cell 0 1,alignx center");
 		panel1.add(new JLabel("Galway"),"cell 0 2,alignx center");
@@ -149,25 +152,27 @@ public class Main {
 		panel3.add(priceLabel,"left, sg 1, split");
 		panel3.add(price,"wrap");
 		panel3.add(blankLabel3,"wrap");
+		panel3.add(totalLabel,"left, sg 1, split");
+		panel3.add(total, "wrap");
 		panel3.add(submitBtn,"left, split");
 		panel3.add(printBtn);
 		panel3.add(clearBtn,"center, wrap");
 		panel3.add(blankLabel5, "wrap");
-		panel3.add(totalLabel,"left, sg 1, split");
-		panel3.add(total, "wrap");
+		panel3.add(blankLabel6, "wrap");
 		
 		
 		
 		panel4.setLayout(new MigLayout("", "[]", "[][][][]"));
-		panel4.setBorder(BorderFactory.createTitledBorder("Clock"));
+		panel4.setBorder(BorderFactory.createEtchedBorder());
+		panel4.setBackground(Color.WHITE);
 		panel4.add(new MainClock());
 		panel3.add(panel4);
 		//Panel 4 Add Item
 		
 		String[] addRemove = {"Add Item", "Remove Item"};
 		
-//		panel5.setLayout(new MigLayout("","40[]40[]"));
-//		panel5.setBorder(BorderFactory.createTitledBorder("Add/Remove Item"));
+		panel5.setLayout(new MigLayout("","40[]40[]"));
+		panel5.setBorder(BorderFactory.createTitledBorder("Add/Remove Item"));
 		JComboBox addRemoveCombo = new JComboBox(addRemove);
 		JLabel itemNameLabel = new JLabel("Name:");
 		JTextField itemName = new JTextField(8);
@@ -178,15 +183,15 @@ public class Main {
 		JButton addItemBtn = new JButton("Submit");
 		
 		
-//		panel5.add(addRemoveCombo,"wrap");
-//		panel5.add(itemNameLabel,"growx, split, sg 1");
-//		panel5.add(itemName,"wrap");
-//		panel5.add(itemPriceLabel,"split, sg 1");
-//		panel5.add(itemPrice,"wrap");
-//		panel5.add(stockAmountLabel,"split, sg 1");
-//		panel5.add(stockAmount,"wrap");
-//		panel5.add(blankLabel4,"wrap");
-//		panel5.add(addItemBtn,"center");
+		panel5.add(addRemoveCombo,"wrap");
+		panel5.add(itemNameLabel,"growx, split, sg 1");
+		panel5.add(itemName,"wrap");
+		panel5.add(itemPriceLabel,"split, sg 1");
+		panel5.add(itemPrice,"wrap");
+		panel5.add(stockAmountLabel,"split, sg 1");
+		panel5.add(stockAmount,"wrap");
+		panel5.add(blankLabel4,"wrap");
+		panel5.add(addItemBtn,"center");
 		
 		
 		//Keypad Panel
@@ -241,10 +246,10 @@ public class Main {
 		frame.setVisible(true);
 		
 		
-//		keypad.getContentPane().add(panel5, BorderLayout.CENTER);
-//		keypad.setSize(250,240);
-//		//keypad.pack();
-//		keypad.setVisible(true);
+		keypad.getContentPane().add(panel5, BorderLayout.CENTER);
+		keypad.setSize(250,240);
+		//keypad.pack();
+		keypad.setVisible(true);
 		
 	}
 

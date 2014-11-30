@@ -30,7 +30,7 @@ class Clock extends JComponent {
     
     //==================================================== Clock constructor
     public Clock() {
-        setPreferredSize(new Dimension(150,150));
+        setPreferredSize(new Dimension(160,160));
         
         _timer = new javax.swing.Timer(UPDATE_INTERVAL, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
